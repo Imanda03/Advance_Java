@@ -5,9 +5,9 @@ import java.awt.event.*;
 
 public class Login implements ActionListener {
     JTextField tfUser, tfPassword;
+    JFrame f = new JFrame("Login");
 
     public Login() {
-        JFrame f = new JFrame("Login");
         JLabel lUser = new JLabel("Username");
         lUser.setBounds(20, 20, 150, 25);
         f.add(lUser);
@@ -45,8 +45,12 @@ public class Login implements ActionListener {
         String user = tfUser.getText();
         String password = tfPassword.getText();
         // System.out.println(user + password);
-        if(user.equals("admin") && password.equals("admin")){
-            System.out.println();
+        if (user.equals("admin") && password.equals("admin")) {
+            JDialog d = new JDialog(f, "Login Success", true);
+
+            d.setLocationRelativeTo(d);
+            d.setSize(200, 100);
+            d.setVisible(true);
         }
     }
 }
