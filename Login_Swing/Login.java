@@ -2,6 +2,7 @@ package Login_Swing;
 
 import javax.swing.*;
 import java.awt.event.*;
+import java.sql.*;
 
 public class Login implements ActionListener {
     JTextField tfUser, tfPassword;
@@ -51,6 +52,15 @@ public class Login implements ActionListener {
             d.setLocationRelativeTo(d);
             d.setSize(200, 100);
             d.setVisible(true);
+        }
+
+        try {
+            Connection conn = DriverManager.getConnection("http://localhost/phpmyadmin/advanceJava","root","");
+            
+
+        } catch (SQLException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
         }
     }
 }
