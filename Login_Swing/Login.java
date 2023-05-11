@@ -53,14 +53,5 @@ public class Login implements ActionListener {
             d.setSize(200, 100);
             d.setVisible(true);
         }
-
-        try {
-            Connection conn = DriverManager.getConnection("http://localhost/phpmyadmin/advanceJava","root","");
-            
-
-        } catch (SQLException e1) {
-            // TODO Auto-generated catch block
-            e1.printStackTrace();
-        }
     }
 }
