@@ -43,29 +43,6 @@ public class Register implements ActionListener {
         f.setVisible(true);
     }
 
-    public void actionPerformed(ActionEvent e) {
-        String username = tfusername.getText();
-        String password = tfPassword.getText();
-
-        String dburl = "jdbc:mysql://localhost/login?useSSL=false";
-        String dbUsername = "root";
-        String dbPassword = "root";
-
-        try (Connection conn = DriverManager.getConnection(dburl, dbUsername, dbPassword)) {
-            String query = "INSERT INTO login(`username`, `password`) VALUES ('" + username + "', '" + password + "')";
-            Statement stmt = conn.prepareStatement(query);
-            int affectedRows = stmt.executeUpdate(query);
-            if (affectedRows > 0) {
-                JDialog dialog = new JDialog(f, "User Creaton Success", true);
-                dialog.setLocationRelativeTo(dialog);
-                dialog.setSize(400, 100);
-                dialog.setVisible(true);
-            }
-        } catch (Exception se) {
-            se.printStackTrace();
-        }
-    }
-
     public static void main(String[] args) {
         new Register();
 
